@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>please choose a command to display</p>
+<button type="button" id='ifconfig'>ifconfig</button>
+<button type="button" id='uptime'>uptime</button>
+<p>result:</p>
+<span id='result'></span>
+ 
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $("#ifconfig").click(function(){
+        $.get("/command/", function(ret){
+            $('#result').html(ret)
+        })
+      });
+    });
+    $(document).ready(function(){
+      $("#uptime").click(function(){
+        $.get("/command1/", function(ret){
+            $('#result').html(ret)
+        })
+      });
+    });
+</script>
+</body>
+</html>
