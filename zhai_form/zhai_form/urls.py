@@ -19,4 +19,5 @@ urlpatterns = patterns('',
       url(r'^index/', 'tools.views.index', name='ip'),
       url(r'^command/', 'tools.views.command', name='ip1'),
       url(r'^command1/', 'tools.views.command1', name='ip11'),
+      url(r'^get/', 'tools.views.get', name='get'),
 )

@@ -2,13 +2,22 @@
 <html>
 <body>
 <p>please choose a command to display</p>
-<button type="button" id='ifconfig'>ifconfig</button>
-<button type="button" id='uptime'>uptime</button>
+<button type="button" id='ifconfig'>ifconfig</button><br>
+<button type="button" id='uptime'>uptime</button><br>
+or you can input the command what you want:<br>
+<input type="text" id="get"><br>
+<input type="button" id="button" value="submit" onclick="zhai()"><br>
 <p>result:</p>
 <span id='result'></span>
  
 <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
+function zhai(){
+var gudu=document.getElementById('get').value;
+$.get("/get/",{'haha':gudu},function(ret){
+$('#result').html(ret)
+    })
+}
     $(document).ready(function(){
       $("#ifconfig").click(function(){
         $.get("/command/", function(ret){
